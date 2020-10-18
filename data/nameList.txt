@@ -1,0 +1,67 @@
+
+|--------------- Punishment List ---------------|
+ 
+number: 110086  name: tgwphq 
+absence:  Tuesday  Wednesday  Thursday  Friday 
+left early:  Monday 
+ 
+number: 110087  name: nmfrhg 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110088  name: ttwkcw 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110089  name: tnhmjq 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110090  name: bxhhku 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110091  name: ujzecu 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110092  name: zeddzq 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110093  name: fxzeyz 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110094  name: fvpisz 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110095  name: gbqdcw 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110096  name: yxjaci 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110097  name: atpmbl 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110098  name: axdedh 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110099  name: smtpms 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110100  name: jocsqw 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110101  name: uekzgh 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110102  name: mgqxye 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110103  name: jrfgav 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110104  name: gaofuu 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+ 
+number: 110105  name: xblknu 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
+|------------------- E N D ---------------------|
+
+|------------------ Award List -----------------|
+|------------------- E N D ---------------------|
