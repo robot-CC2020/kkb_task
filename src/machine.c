@@ -2,6 +2,8 @@
 #include "input.h"
 #include <string.h>
 #include <stdlib.h>
+#include <pthread.h>
+
 typedef enum MachineState
 {
     MAIN = 0,
@@ -31,52 +33,37 @@ static int clockInRecord(AttendRecord *staff, SysTime stime);
 static int clockOutRecord(AttendRecord *staff, SysTime stime);
 static int getCheckCode(const char number[], int length, char checkCode[]);
 static int printReport(FILE *fp, AttendRecord *staff, int days);
+static void *timeThread(void*); 
+
 
 void clockin_machine_start(void)
 {
-    time_t curT = -1;
     char inputStr[BUFF_SIZE] = {0};
     int length = BUFF_SIZE - 1;
     int getLen = 0;
-    int count = 0; //循环计数
-    size_t baseT = time(NULL);;
+    pthread_t threadHandle = 0;
     printf("clockin machine start !\r\n");
     sysInit(); //打卡机初始化
+    if (pthread_create(&threadHandle, NULL, timeThread, NULL)) 
+    {
+        fprintf(stderr, "create time thread failed ! \r\n");
+        exit(-1);
+    }
     while (1)
     {
-        count++;
-        //获取输入
-        if (count % 2 == 0)
+        getLen = getInputStr(inputStr, length);
+        if (getLen > 0)
         {
-            getLen = getInputStr(inputStr, length);
-            if (getLen > 0)
-            {
-                if (inputStr[0] == 'q')//退出
-                {
-                    FILE *fp = fopen(REPORT_FILE, "w+t");
-                    printf("writing file : %s\r\n",REPORT_FILE);
-                    genWeeklyReport(fp);
-                    fclose(fp);
-                    break;
-                }
-                dealWith(inputStr, length); //处理输入
-            }
-        }
-        //更新时间
-        if (count % 100 == 0)
-        {
-            g_currentT = TIME_RATIO * (time(NULL) - baseT);
-            convertTime(g_currentT, &g_stime);
-            if (curT > 5 * 24 * 3600)
+            if (inputStr[0] == 'q') //退出
             {
                 FILE *fp = fopen(REPORT_FILE, "w+t");
-                printf("writing file : %s\r\n",REPORT_FILE);
+                printf("writing file : %s\r\n", REPORT_FILE);
                 genWeeklyReport(fp);
                 fclose(fp);
                 break;
             }
+            dealWith(inputStr, length); //处理输入
         }
-        sleep_ms(10);
     }
     printf("attendance machine has done !\r\n");
 }
@@ -120,6 +107,27 @@ int sysInit(void)
     refreshInterface(MAIN, DELAY_OK);
     fclose(fp);
     return 0;
+}
+
+
+static void *timeThread(void *arg)
+{
+    time_t curT = -1;
+    size_t baseT = time(NULL);
+    while (1)
+    {
+        g_currentT = TIME_RATIO * (time(NULL) - baseT);
+        convertTime(g_currentT, &g_stime);
+        if (curT > 5 * 24 * 3600)
+        {
+            FILE *fp = fopen(REPORT_FILE, "w+t");
+            printf("writing file : %s\r\n", REPORT_FILE);
+            genWeeklyReport(fp);
+            fclose(fp);
+        }
+    }
+    pthread_exit(NULL);
+
 }
 
 int convertTime(time_t second, SysTime *sysTime)

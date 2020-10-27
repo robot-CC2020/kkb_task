@@ -19,7 +19,7 @@ SUFFIX = c
 #编译选项： 
 #C常用标准： c89 c99 gnu90 gnu99 gnu11 
 #C++常用标准： c++98 c++11 gnu++98 gnu++11
-CFLAGS = -g -Wall -fexec-charset=utf-8 -std=gnu99
+CFLAGS = -g -Wall -fexec-charset=utf-8 -std=gnu99 -lpthread
 CPATH = $(addprefix -I,$(INC_DIR))
 #--------------------------------------------------------------------
 #文件集合

@@ -1,6 +1,6 @@
 
 |----------------Weekly  report ----------------|
-Number : 110086 totalHours : 0	absence : 8	come late : 0	left early : 1	
+Number : 110086 totalHours : 0	absence : 9	come late : 0	left early : 0	
 Number : 110087 totalHours : 0	absence : 10	come late : 0	left early : 0	
 Number : 110088 totalHours : 0	absence : 10	come late : 0	left early : 0	
 Number : 110089 totalHours : 0	absence : 10	come late : 0	left early : 0	

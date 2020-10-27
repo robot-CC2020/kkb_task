@@ -2,8 +2,7 @@
 |--------------- Punishment List ---------------|
  
 number: 110086  name: tgwphq 
-absence:  Tuesday  Wednesday  Thursday  Friday 
-left early:  Monday 
+absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
  
 number: 110087  name: nmfrhg 
 absence:  Monday  Tuesday  Wednesday  Thursday  Friday 
